@@ -143,11 +143,29 @@ def main(train_mode, downstream_name):
     val_loaders = []
     test_loaders = []
 
+    pos_weights_per_fold = []
+
     for fold, (train_val_idx, test_idx) in enumerate(kf.split(downstream_dataset)):
         train_val_subset = Subset(downstream_dataset, train_val_idx)
         test_subset = Subset(downstream_dataset, test_idx)
 
         train_subset, val_subset = random_split(train_val_subset, [len(train_val_subset) - int(len(train_val_subset) * 0.2), int(len(train_val_subset) * 0.2)])
+
+        train_labels_list = [train_subset[i][2] for i in range(len(train_subset))]
+        train_labels = torch.tensor(train_labels_list)
+        # ============================================
+
+        # Tính số lượng mẫu âm và dương
+        neg_count = (train_labels == 0).sum().item()
+        pos_count = (train_labels == 1).sum().item()
+        
+        if pos_count > 0:
+            pos_weight_value = (neg_count / pos_count)
+        else:
+            pos_weight_value = 1.0
+        pos_weights_per_fold.append(pos_weight_value)
+        print(f"Fold {fold}: Train size={len(train_subset)}, Positives={pos_count}, Negatives={neg_count}, Calculated pos_weight={pos_weight_value:.4f}")
+        
         # 创建DataLoader
         train_loader = DataLoader(train_subset, batch_size=256, shuffle=True)
         val_loader = DataLoader(val_subset, batch_size=256, shuffle=False)
@@ -185,11 +203,22 @@ def main(train_mode, downstream_name):
                 torch.load('./modelBest/selected_layers.pth', map_location=torch.device('cpu')), strict=False)
             finue_model.to(device)
 
+
             # 冻结Transformer层的参数
             # for param in finue_model.transformer.parameters():
             #     param.requires_grad = False
             
-            FITransformer_trainer(finue_model, train_loaders[idx], val_loaders[idx], num_epochs=2000, learning_rate= 3 * 1e-4, num=idx, repeat=repeat, device=device).train()
+            FITransformer_trainer(
+                finue_model, 
+                train_loaders[idx], 
+                val_loaders[idx], 
+                num_epochs=2000, 
+                learning_rate= 3 * 1e-4, 
+                pos_weight_value=pos_weights_per_fold[idx],
+                num=idx, 
+                repeat=repeat, 
+                device=device
+            ).train()
             finue_model.load_state_dict(torch.load(f'./modelBest/FITransformer_{idx}_modelBestParameters'))
         
             # 预测
@@ -232,8 +261,8 @@ def main(train_mode, downstream_name):
     all_repeat_labels = np.concatenate(all_repeat_labels)
     all_repeat_preds = np.concatenate(all_repeat_preds)
 
-    # np.save(f'./visualResult/ROCData/FI-Transformer-Noise_{downstream_name}_labels.npy', all_repeat_labels)
-    # np.save(f'./visualResult/ROCData/FI-Transformer-Noise_{downstream_name}_preds.npy', all_repeat_preds)
+    np.save(f'./visualResult/ROCData/FI-Transformer-Noise_{downstream_name}_labels.npy', all_repeat_labels)
+    np.save(f'./visualResult/ROCData/FI-Transformer-Noise_{downstream_name}_preds.npy', all_repeat_preds)
 
 
 if __name__ == "__main__":

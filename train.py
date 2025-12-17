@@ -5,6 +5,7 @@ from torch.utils.tensorboard import SummaryWriter
 from tqdm import tqdm
 import os
 import numpy as np
+from focal_loss import FocalLoss
 
 loss_path = "./losscurve/FITransformer_loss"
 if not os.path.exists(loss_path):
@@ -14,15 +15,19 @@ writer = SummaryWriter(loss_path)
 
 
 class FITransformer_trainer():
-    def __init__(self, model, train_dataloader, val_dataloader, num_epochs=500, learning_rate=1e-3, num=0, repeat=0, device=""):
+    def __init__(self, model, train_dataloader, val_dataloader, num_epochs=500, learning_rate=1e-3, pos_weight_value=1.0, alpha=0.25, gamma=2.0, num=0, repeat=0, device=""):
         super().__init__()
         self.model = model
         self.train_dataloader = train_dataloader
         self.val_dataloader = val_dataloader
         self.num_epochs = num_epochs
-        pos_weight_tensor = torch.tensor([19.5], device=device) 
-        self.criterion = nn.BCEWithLogitsLoss(pos_weight=pos_weight_tensor)
+        # print(f"Initializing loss with pos_weight: {pos_weight_value:.4f}")
+        # pos_weight_tensor = torch.tensor([pos_weight_value], device=device)
+        # self.criterion = nn.BCEWithLogitsLoss(pos_weight=pos_weight_tensor)
        
+        print(f"Initializing with Focal Loss (alpha={alpha:.4f}, gamma={gamma:.4f})")
+        self.criterion = FocalLoss(alpha=alpha, gamma=gamma)
+
         self.optimizer = optim.AdamW(filter(lambda p: p.requires_grad, model.parameters()), lr=learning_rate, weight_decay=1e-5)
 
         self.early_stopping = 0

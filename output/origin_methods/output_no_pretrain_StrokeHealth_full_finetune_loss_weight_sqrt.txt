@@ -1,0 +1,107 @@
+cpu
+Loaded Stroke Health dataset with 737 samples.
+Fold 0: Train size=531, Positives=82, Negatives=449, Calculated pos_weight=2.3400
+Fold 1: Train size=531, Positives=75, Negatives=456, Calculated pos_weight=2.4658
+Fold 2: Train size=531, Positives=77, Negatives=454, Calculated pos_weight=2.4282
+Fold 3: Train size=531, Positives=81, Negatives=450, Calculated pos_weight=2.3570
+Fold 4: Train size=531, Positives=81, Negatives=450, Calculated pos_weight=2.3570
+Fold 5: Train size=531, Positives=72, Negatives=459, Calculated pos_weight=2.5249
+Fold 6: Train size=531, Positives=75, Negatives=456, Calculated pos_weight=2.4658
+Fold 7: Train size=532, Positives=74, Negatives=458, Calculated pos_weight=2.4878
+Fold 8: Train size=532, Positives=77, Negatives=455, Calculated pos_weight=2.4309
+Fold 9: Train size=532, Positives=75, Negatives=457, Calculated pos_weight=2.4685
+Repeat: 0 Model 1------------------------------
+Initializing loss with pos_weight: 2.3400
+Early stopping triggered at epoch 22
+Repeat: 0 Model 2------------------------------
+Initializing loss with pos_weight: 2.4658
+Early stopping triggered at epoch 18
+Repeat: 0 Model 3------------------------------
+Initializing loss with pos_weight: 2.4282
+Early stopping triggered at epoch 14
+Repeat: 0 Model 4------------------------------
+Initializing loss with pos_weight: 2.3570
+Early stopping triggered at epoch 21
+Repeat: 0 Model 5------------------------------
+Initializing loss with pos_weight: 2.3570
+Early stopping triggered at epoch 14
+Repeat: 0 Model 6------------------------------
+Initializing loss with pos_weight: 2.5249
+Early stopping triggered at epoch 22
+Repeat: 0 Model 7------------------------------
+Initializing loss with pos_weight: 2.4658
+Early stopping triggered at epoch 13
+Repeat: 0 Model 8------------------------------
+Initializing loss with pos_weight: 2.4878
+Early stopping triggered at epoch 16
+Repeat: 0 Model 9------------------------------
+Initializing loss with pos_weight: 2.4309
+Early stopping triggered at epoch 18
+Repeat: 0 Model 10------------------------------
+Initializing loss with pos_weight: 2.4685
+Early stopping triggered at epoch 22
+Repeat: 1 Model 1------------------------------
+Initializing loss with pos_weight: 2.3400
+Early stopping triggered at epoch 36
+Repeat: 1 Model 2------------------------------
+Initializing loss with pos_weight: 2.4658
+Early stopping triggered at epoch 25
+Repeat: 1 Model 3------------------------------
+Initializing loss with pos_weight: 2.4282
+Early stopping triggered at epoch 15
+Repeat: 1 Model 4------------------------------
+Initializing loss with pos_weight: 2.3570
+Early stopping triggered at epoch 14
+Repeat: 1 Model 5------------------------------
+Initializing loss with pos_weight: 2.3570
+Early stopping triggered at epoch 16
+Repeat: 1 Model 6------------------------------
+Initializing loss with pos_weight: 2.5249
+Early stopping triggered at epoch 22
+Repeat: 1 Model 7------------------------------
+Initializing loss with pos_weight: 2.4658
+Early stopping triggered at epoch 14
+Repeat: 1 Model 8------------------------------
+Initializing loss with pos_weight: 2.4878
+Early stopping triggered at epoch 16
+Repeat: 1 Model 9------------------------------
+Initializing loss with pos_weight: 2.4309
+Early stopping triggered at epoch 16
+Repeat: 1 Model 10------------------------------
+Initializing loss with pos_weight: 2.4685
+Early stopping triggered at epoch 16
+Repeat: 2 Model 1------------------------------
+Initializing loss with pos_weight: 2.3400
+Early stopping triggered at epoch 18
+Repeat: 2 Model 2------------------------------
+Initializing loss with pos_weight: 2.4658
+Early stopping triggered at epoch 15
+Repeat: 2 Model 3------------------------------
+Initializing loss with pos_weight: 2.4282
+Early stopping triggered at epoch 14
+Repeat: 2 Model 4------------------------------
+Initializing loss with pos_weight: 2.3570
+Early stopping triggered at epoch 9
+Repeat: 2 Model 5------------------------------
+Initializing loss with pos_weight: 2.3570
+Early stopping triggered at epoch 26
+Repeat: 2 Model 6------------------------------
+Initializing loss with pos_weight: 2.5249
+Early stopping triggered at epoch 16
+Repeat: 2 Model 7------------------------------
+Initializing loss with pos_weight: 2.4658
+Early stopping triggered at epoch 26
+Repeat: 2 Model 8------------------------------
+Initializing loss with pos_weight: 2.4878
+Early stopping triggered at epoch 14
+Repeat: 2 Model 9------------------------------
+Initializing loss with pos_weight: 2.4309
+Early stopping triggered at epoch 20
+Repeat: 2 Model 10------------------------------
+Initializing loss with pos_weight: 2.4685
+Early stopping triggered at epoch 12
+Accuracy: 0.8635
+Recall: 0.7467
+Precision: 0.5010
+F1: 0.5996
+Roc_auc: 0.8842

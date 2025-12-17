@@ -1,0 +1,105 @@
+# =========================
+# Python cache & bytecode
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# =========================
+# Virtual environments
+# =========================
+venv/
+.env/
+.env*/
+.venv/
+ENV/
+env/
+
+# =========================
+# Package / build artifacts
+# =========================
+build/
+dist/
+develop-eggs/
+eggs/
+*.egg-info/
+.installed.cfg
+lib/
+lib64/
+parts/
+sdist/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+
+# =========================
+# Logs & runtime files
+# =========================
+*.log
+*.pid
+*.seed
+*.coverage
+coverage.xml
+.cache/
+.pytest_cache/
+nosetests.xml
+
+# =========================
+# Jupyter Notebook
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# IDE & editor files
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*~
+
+# =========================
+# OS-specific files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Environment / secrets
+# =========================
+.env
+.env.*
+*.key
+*.pem
+
+# =========================
+# Data / outputs (ML, DL)
+# =========================
+data/
+datasets/
+outputs/
+results/
+checkpoints/
+logs/
+runs/
+losscurve/
+visualResult/
+
+# =========================
+# Model files
+# =========================
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.onnx
+*.pkl
+*.joblib
+modelBest/
+
+# =========================
+# Temporary files
+# =========================
+tmp/
+temp/

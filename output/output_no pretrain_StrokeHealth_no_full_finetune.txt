@@ -1,0 +1,67 @@
+cpu
+Loaded Stroke Health dataset with 737 samples.
+Repeat: 0 Model 1------------------------------
+Early stopping triggered at epoch 38
+Repeat: 0 Model 2------------------------------
+Early stopping triggered at epoch 33
+Repeat: 0 Model 3------------------------------
+Early stopping triggered at epoch 36
+Repeat: 0 Model 4------------------------------
+Early stopping triggered at epoch 62
+Repeat: 0 Model 5------------------------------
+Early stopping triggered at epoch 39
+Repeat: 0 Model 6------------------------------
+Early stopping triggered at epoch 43
+Repeat: 0 Model 7------------------------------
+Early stopping triggered at epoch 34
+Repeat: 0 Model 8------------------------------
+Early stopping triggered at epoch 37
+Repeat: 0 Model 9------------------------------
+Early stopping triggered at epoch 32
+Repeat: 0 Model 10------------------------------
+Early stopping triggered at epoch 14
+Repeat: 1 Model 1------------------------------
+Early stopping triggered at epoch 51
+Repeat: 1 Model 2------------------------------
+Early stopping triggered at epoch 57
+Repeat: 1 Model 3------------------------------
+Early stopping triggered at epoch 41
+Repeat: 1 Model 4------------------------------
+Early stopping triggered at epoch 44
+Repeat: 1 Model 5------------------------------
+Early stopping triggered at epoch 45
+Repeat: 1 Model 6------------------------------
+Early stopping triggered at epoch 47
+Repeat: 1 Model 7------------------------------
+Early stopping triggered at epoch 39
+Repeat: 1 Model 8------------------------------
+Early stopping triggered at epoch 46
+Repeat: 1 Model 9------------------------------
+Early stopping triggered at epoch 28
+Repeat: 1 Model 10------------------------------
+Early stopping triggered at epoch 23
+Repeat: 2 Model 1------------------------------
+Early stopping triggered at epoch 38
+Repeat: 2 Model 2------------------------------
+Early stopping triggered at epoch 44
+Repeat: 2 Model 3------------------------------
+Early stopping triggered at epoch 37
+Repeat: 2 Model 4------------------------------
+Early stopping triggered at epoch 30
+Repeat: 2 Model 5------------------------------
+Early stopping triggered at epoch 43
+Repeat: 2 Model 6------------------------------
+Early stopping triggered at epoch 43
+Repeat: 2 Model 7------------------------------
+Early stopping triggered at epoch 40
+Repeat: 2 Model 8------------------------------
+Early stopping triggered at epoch 38
+Repeat: 2 Model 9------------------------------
+Early stopping triggered at epoch 31
+Repeat: 2 Model 10------------------------------
+Early stopping triggered at epoch 27
+Accuracy: 0.8630
+Recall: 0.0267
+Precision: 0.6333
+F1: 0.0496
+Roc_auc: 0.8792

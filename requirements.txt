@@ -5,3 +5,6 @@ tensorboard
 tqdm
 scikit-learn
 openpyxl
+jupyter
+matplotlib
+seaborn

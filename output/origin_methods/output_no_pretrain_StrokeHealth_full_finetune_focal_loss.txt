@@ -1,0 +1,107 @@
+cpu
+Loaded Stroke Health dataset with 737 samples.
+Fold 0: Train size=531, Positives=82, Negatives=449, Calculated alpha=0.8456
+Fold 1: Train size=531, Positives=75, Negatives=456, Calculated alpha=0.8588
+Fold 2: Train size=531, Positives=77, Negatives=454, Calculated alpha=0.8550
+Fold 3: Train size=531, Positives=81, Negatives=450, Calculated alpha=0.8475
+Fold 4: Train size=531, Positives=81, Negatives=450, Calculated alpha=0.8475
+Fold 5: Train size=531, Positives=72, Negatives=459, Calculated alpha=0.8644
+Fold 6: Train size=531, Positives=75, Negatives=456, Calculated alpha=0.8588
+Fold 7: Train size=532, Positives=74, Negatives=458, Calculated alpha=0.8609
+Fold 8: Train size=532, Positives=77, Negatives=455, Calculated alpha=0.8553
+Fold 9: Train size=532, Positives=75, Negatives=457, Calculated alpha=0.8590
+Repeat: 0 Model 1------------------------------
+Initializing with Focal Loss (alpha=0.8456, gamma=2.0000)
+Early stopping triggered at epoch 23
+Repeat: 0 Model 2------------------------------
+Initializing with Focal Loss (alpha=0.8588, gamma=2.0000)
+Early stopping triggered at epoch 20
+Repeat: 0 Model 3------------------------------
+Initializing with Focal Loss (alpha=0.8550, gamma=2.0000)
+Early stopping triggered at epoch 15
+Repeat: 0 Model 4------------------------------
+Initializing with Focal Loss (alpha=0.8475, gamma=2.0000)
+Early stopping triggered at epoch 15
+Repeat: 0 Model 5------------------------------
+Initializing with Focal Loss (alpha=0.8475, gamma=2.0000)
+Early stopping triggered at epoch 15
+Repeat: 0 Model 6------------------------------
+Initializing with Focal Loss (alpha=0.8644, gamma=2.0000)
+Early stopping triggered at epoch 17
+Repeat: 0 Model 7------------------------------
+Initializing with Focal Loss (alpha=0.8588, gamma=2.0000)
+Early stopping triggered at epoch 15
+Repeat: 0 Model 8------------------------------
+Initializing with Focal Loss (alpha=0.8609, gamma=2.0000)
+Early stopping triggered at epoch 17
+Repeat: 0 Model 9------------------------------
+Initializing with Focal Loss (alpha=0.8553, gamma=2.0000)
+Early stopping triggered at epoch 16
+Repeat: 0 Model 10------------------------------
+Initializing with Focal Loss (alpha=0.8590, gamma=2.0000)
+Early stopping triggered at epoch 12
+Repeat: 1 Model 1------------------------------
+Initializing with Focal Loss (alpha=0.8456, gamma=2.0000)
+Early stopping triggered at epoch 16
+Repeat: 1 Model 2------------------------------
+Initializing with Focal Loss (alpha=0.8588, gamma=2.0000)
+Early stopping triggered at epoch 26
+Repeat: 1 Model 3------------------------------
+Initializing with Focal Loss (alpha=0.8550, gamma=2.0000)
+Early stopping triggered at epoch 17
+Repeat: 1 Model 4------------------------------
+Initializing with Focal Loss (alpha=0.8475, gamma=2.0000)
+Early stopping triggered at epoch 12
+Repeat: 1 Model 5------------------------------
+Initializing with Focal Loss (alpha=0.8475, gamma=2.0000)
+Early stopping triggered at epoch 12
+Repeat: 1 Model 6------------------------------
+Initializing with Focal Loss (alpha=0.8644, gamma=2.0000)
+Early stopping triggered at epoch 19
+Repeat: 1 Model 7------------------------------
+Initializing with Focal Loss (alpha=0.8588, gamma=2.0000)
+Early stopping triggered at epoch 14
+Repeat: 1 Model 8------------------------------
+Initializing with Focal Loss (alpha=0.8609, gamma=2.0000)
+Early stopping triggered at epoch 20
+Repeat: 1 Model 9------------------------------
+Initializing with Focal Loss (alpha=0.8553, gamma=2.0000)
+Early stopping triggered at epoch 26
+Repeat: 1 Model 10------------------------------
+Initializing with Focal Loss (alpha=0.8590, gamma=2.0000)
+Early stopping triggered at epoch 14
+Repeat: 2 Model 1------------------------------
+Initializing with Focal Loss (alpha=0.8456, gamma=2.0000)
+Early stopping triggered at epoch 10
+Repeat: 2 Model 2------------------------------
+Initializing with Focal Loss (alpha=0.8588, gamma=2.0000)
+Early stopping triggered at epoch 16
+Repeat: 2 Model 3------------------------------
+Initializing with Focal Loss (alpha=0.8550, gamma=2.0000)
+Early stopping triggered at epoch 22
+Repeat: 2 Model 4------------------------------
+Initializing with Focal Loss (alpha=0.8475, gamma=2.0000)
+Early stopping triggered at epoch 20
+Repeat: 2 Model 5------------------------------
+Initializing with Focal Loss (alpha=0.8475, gamma=2.0000)
+Early stopping triggered at epoch 13
+Repeat: 2 Model 6------------------------------
+Initializing with Focal Loss (alpha=0.8644, gamma=2.0000)
+Early stopping triggered at epoch 22
+Repeat: 2 Model 7------------------------------
+Initializing with Focal Loss (alpha=0.8588, gamma=2.0000)
+Early stopping triggered at epoch 11
+Repeat: 2 Model 8------------------------------
+Initializing with Focal Loss (alpha=0.8609, gamma=2.0000)
+Early stopping triggered at epoch 18
+Repeat: 2 Model 9------------------------------
+Initializing with Focal Loss (alpha=0.8553, gamma=2.0000)
+Early stopping triggered at epoch 22
+Repeat: 2 Model 10------------------------------
+Initializing with Focal Loss (alpha=0.8590, gamma=2.0000)
+Early stopping triggered at epoch 19
+Accuracy: 0.8229
+Recall: 0.8967
+Precision: 0.4297
+F1: 0.5810
+Roc_auc: 0.8961

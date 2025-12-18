@@ -144,6 +144,7 @@ def main(train_mode, downstream_name):
     test_loaders = []
 
     pos_weights_per_fold = []
+    focal_loss_params_per_fold = []
 
     for fold, (train_val_idx, test_idx) in enumerate(kf.split(downstream_dataset)):
         train_val_subset = Subset(downstream_dataset, train_val_idx)
@@ -156,16 +157,30 @@ def main(train_mode, downstream_name):
         # ============================================
 
         # Tính số lượng mẫu âm và dương
+        # neg_count = (train_labels == 0).sum().item()
+        # pos_count = (train_labels == 1).sum().item()
+        
+        # if pos_count > 0:
+        #     pos_weight_value = (neg_count / pos_count)
+        # else:
+        #     pos_weight_value = 1.0
+        # pos_weights_per_fold.append(pos_weight_value)
+        # print(f"Fold {fold}: Train size={len(train_subset)}, Positives={pos_count}, Negatives={neg_count}, Calculated pos_weight={pos_weight_value:.4f}")
+        
         neg_count = (train_labels == 0).sum().item()
         pos_count = (train_labels == 1).sum().item()
-        
+        total_count = len(train_labels)
+
         if pos_count > 0:
-            pos_weight_value = (neg_count / pos_count)
+            alpha_value = neg_count / total_count
         else:
-            pos_weight_value = 1.0
-        pos_weights_per_fold.append(pos_weight_value)
-        print(f"Fold {fold}: Train size={len(train_subset)}, Positives={pos_count}, Negatives={neg_count}, Calculated pos_weight={pos_weight_value:.4f}")
+            alpha_value = 0.5 # Giá trị dự phòng
+
+        # Lưu cả alpha và gamma vào một dictionary
+        focal_loss_params_per_fold.append({'alpha': alpha_value, 'gamma': 2.0})
         
+        print(f"Fold {fold}: Train size={len(train_subset)}, Positives={pos_count}, Negatives={neg_count}, Calculated alpha={alpha_value:.4f}")
+
         # 创建DataLoader
         train_loader = DataLoader(train_subset, batch_size=256, shuffle=True)
         val_loader = DataLoader(val_subset, batch_size=256, shuffle=False)
@@ -208,13 +223,17 @@ def main(train_mode, downstream_name):
             # for param in finue_model.transformer.parameters():
             #     param.requires_grad = False
             
+            focal_params = focal_loss_params_per_fold[idx]
+
             FITransformer_trainer(
                 finue_model, 
                 train_loaders[idx], 
                 val_loaders[idx], 
                 num_epochs=2000, 
                 learning_rate= 3 * 1e-4, 
-                pos_weight_value=pos_weights_per_fold[idx],
+                # pos_weight_value=pos_weights_per_fold[idx],
+                alpha=focal_params['alpha'],
+                gamma=focal_params['gamma'],
                 num=idx, 
                 repeat=repeat, 
                 device=device

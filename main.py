@@ -127,6 +127,7 @@ def main(train_mode, downstream_name):
         downstream_cat_card = []
     elif downstream_name == "StrokeHealth":
         downstream_dataset = StrokeHealthDataset(path_file="./data/synthetic_multimodal.csv")
+        # downstream_dataset = StrokeHealthDataset(path_file="./data/healthcare-dataset-stroke-data.csv")
         downstream_num_continuous = 3
         # gender(2), hypertension(2), heart_disease(2), ever_married(2), work_type(5), Residence_type(2), smoking_status(4)
         downstream_cat_card = [2, 2, 2, 2, 5, 2, 4]
@@ -146,7 +147,11 @@ def main(train_mode, downstream_name):
     pos_weights_per_fold = []
     focal_loss_params_per_fold = []
 
+    # y_for_stratify = downstream_dataset.label_features
+
+    # for fold, (train_val_idx, test_idx) in enumerate(kf.split(np.zeros(len(downstream_dataset)), y_for_stratify)):
     for fold, (train_val_idx, test_idx) in enumerate(kf.split(downstream_dataset)):
+
         train_val_subset = Subset(downstream_dataset, train_val_idx)
         test_subset = Subset(downstream_dataset, test_idx)
 
